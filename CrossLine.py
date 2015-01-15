@@ -1,3 +1,6 @@
+import matplotlib.pyplot as plt
+
+
 class Point:
     def __init__(self, x, y):
         self.x = x
@@ -51,7 +54,19 @@ if __name__ == '__main__':
     assert lineCross(line1, line2)==0
     
 #test3: across
-    line1 = Line(Point(-5,-5), Point(5,5))
+    line1 = Line(Point(-4,-7), Point(5,6))
     line2 = Line(Point(5,-5), Point(-5,5))
     assert lineCross(line1, line2)==1
+
+fig = plt.figure()
+ax = fig.add_subplot(111)
+line1_x = [line1.p1.x,line1.p2.x] 
+line1_y = [line1.p1.y,line1.p2.y] 
+line = ax.plot(line1_x, line1_y, 'bs-', picker=5)
+
+line2_x = [line2.p1.x,line2.p2.x] 
+line2_y = [line2.p1.y,line2.p2.y] 
+line = ax.plot(line2_x, line2_y, 'bs-', picker=5)
+
+plt.show()
     
