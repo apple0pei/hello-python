@@ -28,16 +28,16 @@ def lineCross(line1, line2):
     
     if alpha_1 == alpha_2:
         print "Two lines are parallel to each other!"
-        return 0
+        return False
     else:
         x_0 = (beta_2-beta_1) / (alpha_1-alpha_2)
         y_0 = (alpha_1*beta_2-alpha_2*beta_1) / (alpha_1-alpha_2)
         if line1.isInLine(x_0,y_0)==False or line2.isInLine(x_0,y_0)==False:
             print "Two lines do not cross on each other because x=%s and y=%s is out of the range!" % (x_0,y_0)
-            return 0        
+            return False       
         else:
             print "Two lines cross at point x=%s and y=%s" % (x_0,y_0)
-            return 1
+            return True
 
 # def lineCrossUgly(x1, y1, x2, y2, x3, y3, x4, y4):
     
@@ -46,17 +46,17 @@ if __name__ == '__main__':
 #test1: parallel lines
     line1 = Line(Point(0,0), Point(5,5))
     line2 = Line(Point(1,0), Point(6,5))
-    assert lineCross(line1, line2)==0
+    assert lineCross(line1, line2)==False
 
 #test2: not across
     line1 = Line(Point(0,0), Point(5,5))
     line2 = Line(Point(-1,-3), Point(-8,-6))
-    assert lineCross(line1, line2)==0
+    assert lineCross(line1, line2)==False
     
 #test3: across
     line1 = Line(Point(-4,-7), Point(5,6))
     line2 = Line(Point(5,-5), Point(-5,5))
-    assert lineCross(line1, line2)==1
+    assert lineCross(line1, line2)==True
 
 fig = plt.figure()
 ax = fig.add_subplot(111)
