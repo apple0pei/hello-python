@@ -7,6 +7,13 @@ class Line:
     def __init__(self, p1, p2):
         self.p1 = p1
         self.p2 = p2
+        
+    def isInLine(self, x1, y1):
+        if x1 < min(self.p1.x,self.p2.x) or x1 > max(self.p1.x,self.p2.x) or y1 < min(self.p1.y,self.p2.y) or y1 > max(self.p1.y,self.p2.y):
+            return False
+        else:
+            return True
+
 
 def lineCross(line1, line2):
     # y_1 = alpha_1 * x_1 + beta_1 (y_1, x_1 points on line1 bound by p1 and p2 on line1)
@@ -22,9 +29,9 @@ def lineCross(line1, line2):
     else:
         x_0 = (beta_2-beta_1) / (alpha_1-alpha_2)
         y_0 = (alpha_1*beta_2-alpha_2*beta_1) / (alpha_1-alpha_2)
-        if x_0 < min(line1.p1.x,line1.p2.x) or x_0 < min(line2.p1.x,line2.p2.x) or x_0 > max(line1.p1.x,line1.p2.x) or x_0 > max(line2.p1.x,line2.p2.x) or y_0 < min(line1.p1.y,line1.p2.y) or y_0 < min(line2.p1.y,line2.p2.y) or y_0 > max(line1.p1.y,line1.p2.y) or y_0 > max(line2.p1.y,line2.p2.y):
-                print "Two lines do not cross on each other because x=%s and y=%s is out of the range!" % (x_0,y_0)
-                return 0        
+        if line1.isInLine(x_0,y_0)==False or line2.isInLine(x_0,y_0)==False:
+            print "Two lines do not cross on each other because x=%s and y=%s is out of the range!" % (x_0,y_0)
+            return 0        
         else:
             print "Two lines cross at point x=%s and y=%s" % (x_0,y_0)
             return 1
