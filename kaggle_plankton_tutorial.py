@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Jan 15 21:59:28 2015
-
-@author: applepei
-"""
 
 #Import libraries for doing image analysis
 from skimage.io import imread
