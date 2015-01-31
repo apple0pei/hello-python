@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Jan 15 21:59:28 2015
 
-@author: applepei
-"""
 
 #Import libraries for doing image analysis
 from skimage.io import imread
@@ -32,8 +27,8 @@ import warnings
 warnings.filterwarnings("ignore")
 
 # get the classnames from the directory structure
-directory_names = list(set(glob.glob(os.path.join("/Users/applepei/Documents/Work/Kaggle/Plankton2015","train", "*"))\
- ).difference(set(glob.glob(os.path.join("/Users/applepei/Documents/Work/Kaggle/Plankton2015","train","*.*")))))
+directory_names = list(set(glob.glob(os.path.join('''Path removed''',"train", "*"))\
+ ).difference(set(glob.glob(os.path.join('''Path removed''',"train","*.*")))))
  
 # print directory_names
  
@@ -259,5 +254,5 @@ print classification_report(y, y_pred, target_names=namesClasses)
 ### KFold classification_report
 
 
-
+### Kaggle Tutorial code for review/discussion
 
