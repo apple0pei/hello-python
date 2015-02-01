@@ -34,12 +34,12 @@ warnings.filterwarnings("ignore")
 
 # get the classnames from the directory structure
 # get the classnames from the directory structure
-directory_names = list(set(glob.glob(os.path.join("/Users/applepei/Documents/Work/Kaggle/Plankton2015","train", "*"))\
- ).difference(set(glob.glob(os.path.join("/Users/applepei/Documents/Work/Kaggle/Plankton2015","","*.*")))))
+directory_names = list(set(glob.glob(os.path.join('''PATH REMOVED''',"train", "*"))\
+ ).difference(set(glob.glob(os.path.join('''PATH REMOVED''',"","*.*")))))
 
 
-directory_test = list(set(glob.glob(os.path.join("/Users/applepei/Documents/Work/Kaggle","Plankton2015", "test"))\
- ).difference(set(glob.glob(os.path.join("/Users/applepei/Documents/Work/Kaggle","Plankton2015","test.*")))))
+directory_test = list(set(glob.glob(os.path.join('''PATH REMOVED''',"Plankton2015", "test"))\
+ ).difference(set(glob.glob(os.path.join('''PATH REMOVED''',"Plankton2015","test.*")))))
 
 #%% 
 #%%
@@ -312,7 +312,7 @@ for folder in directory_test:
 #np.savetxt("/Users/applepei/Documents/Work/Kaggle/Plankton2015/TutorialTest_X.csv", X, delimiter=",")
 
 import csv
-outputFile = open("/Users/applepei/Documents/Work/Kaggle/Plankton2015/TutorialTest_X_files.csv",'wb')
+outputFile = open('''PATH REMOVED''','wb')
 # Create Writer Object
 wr = csv.writer(outputFile, dialect='excel')
 # Write Data to File
@@ -343,7 +343,7 @@ test_y = clf.predict(X)
 #%%
 #import pandas as pd
 
-pd1 = pd.read_csv("/Users/applepei/Documents/Work/Kaggle/Plankton2015/sampleSubmission.csv",header=0)
+pd1 = pd.read_csv('''PATH REMOVED ... sampleSubmission.csv''',header=0)
 
 print pd1.columns
 print pd1.index
@@ -400,5 +400,5 @@ print pd1.columns[0]
 
 
 #%%
-pd1.to_csv("/Users/applepei/Documents/Work/Kaggle/Plankton2015/pd1Submission.csv", index = False)
+pd1.to_csv('''PATH REMOVED''', index = False)
 #%%
